@@ -1,7 +1,7 @@
-import {defaultScreen, addScreenControl,addScreenMute,addScreen,updateKeys,updateTypes} from './modules/screen-functions.mjs'
+import {defaultScreen, addScreenControl,addScreenMute,addScreen,loadSamplesOnChange,updateKeys,updateTypes} from './modules/screen-functions.mjs'
 import {refreshEvents } from './modules/events.mjs';
 import {parametersValues,setParameterValue} from './modules/parameters.mjs'
-import { addChordGrid, writeScreenRight } from './modules/screen-functions.mjs';
+import { addChordGrid, writeScreenRight} from './modules/screen-functions.mjs';
 
 //Recupération des potards//
 let bpmBtn = document.querySelector("#BPM"); 
@@ -349,14 +349,19 @@ typeBtn.addEventListener('input',(e) => {
   addChordGrid();
 })
 
-
-
-
-
-
-
-
-
+//Le bouton sample est à part car il doit lancer l'upload des samples uniquement sur relachement du pot
+sampleBtn.addEventListener('input', (e)=> {
+  addScreen(e.target.value,e.target.id);
+  e.stopPropagation();
+})
+sampleBtn.addEventListener('mousedown', (e)=>{ 
+  addScreen(e.target.value,e.target.id);
+  e.stopPropagation();
+});
+sampleBtn.addEventListener('change', (e)=>{
+  loadSamplesOnChange();
+  e.stopPropagation();
+});
 
 
 muteButtons.forEach ( (button)=> {
