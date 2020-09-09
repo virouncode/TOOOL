@@ -1,6 +1,7 @@
-import {mainVolume} from './console.mjs'
+import {mainVolume, sideChain} from './console.mjs'
 import {kick, subKick, snare, chord, bass, hh} from './console.mjs'
 import {createEvents} from './events.mjs'
+import {loadSamples} from './load-samples.mjs'
 //************************************TRANSPORT CONTROLS****************************//
 
 //PLAY//
@@ -32,10 +33,13 @@ document.body.addEventListener ('keyup' , (e) => {
 });
 //BPM//
 const mainBPM = Tone.Transport.bpm
-mainBPM.value = 90;
+mainBPM.value = 105;
 //SWING//
-Tone.Transport.swing=0.1;
+Tone.Transport.swing=0;
 Tone.Transport.swingSubdivision="16n";
+
+//Compasation de la latence pour le Sub
+const subLatenceCompensation = 0.02;
 
 
 //INITIALISATION DES PARTS//
@@ -63,7 +67,10 @@ bassPart.loop = true;
 bassPart.loopEnd = numberOfBars.toString()+'m';
 
 const subKickPart = new Tone.Part(  (time, eventsArray) => {
-    subKick.triggerAttackRelease(eventsArray.note, eventsArray.duration, time, eventsArray.velocity);
+    if(eventsArray.velocity>=0.8) {
+      subKick.triggerAttackRelease(eventsArray.note, "64n", time+subLatenceCompensation, eventsArray.velocity);
+      sideChain();
+    }
   }, subKickEvents).start();
 subKickPart.loop = true;
 subKickPart.loopEnd = numberOfBars.toString()+'m';
@@ -86,6 +93,8 @@ const hhPart = new Tone.Part(  (time, partArray) => {
 hhPart.loop = true;
 hhPart.loopEnd = numberOfBars.toString()+'m';
 
+//Load All Samples and play
+loadSamples();
 
 export {mainBPM, chordPart, subKickPart,bassPart, kickPart, snarePart,hhPart}
 

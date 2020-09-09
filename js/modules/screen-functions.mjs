@@ -1,10 +1,11 @@
 import {mainBPM} from './player.mjs'
-import {masterReverb,mainVolume} from './console.mjs'
+import {masterReverb, PitchChordVolume, sidechainCurve, mainVolume, chordLevel, bassLevel, subLevel, kickLevel, snareLevel, hhLevel, chordVolume, bassVolume, kickVolume, snareVolume, hhVolume, subKick} from './console.mjs'
 import {keysNamesArray, toAbsoluteChordProgression} from './music-functions.mjs'
 import {typesNamesArray} from './types.mjs'
 import {patternsNamesList} from './patterns.mjs'
 import {parametersNames, parametersValues, keysNamesList, modesNamesList, typesNamesList,samplesList, setKeysNamesList, setTypesNamesList,setParameterValue } from './parameters.mjs'
 import {typesList} from './types.mjs'
+import {loadSamples} from './load-samples.mjs'
 
 //**********************************************TOUTES LES FONCTIONS QUI CONCERNENT L'ECRAN *******************************************//
 
@@ -56,10 +57,14 @@ const addScreen = (inputValue, item) => {
       break;
     case "LIFE": 
       setParameterValue(inputValue,7);
+      let lifeLog = Math.round(20*Math.log(inputValue)) - 91;
+      PitchChordVolume.volume.value = lifeLog;
       scrollEffect(screenList, inputValue);
       break;    
     case "SIDECHAIN": 
       setParameterValue(inputValue,8);
+      let sidechainLog = Math.round(20*Math.log(inputValue)) - 88;
+      sidechainCurve.volume.value = sidechainLog;
       scrollEffect(screenList, inputValue);
       break;
     case "ACCENT": 
@@ -89,20 +94,53 @@ const addScreenMute = (item) => {
   var checkBoxMuteDrum = document.getElementById("MUTE_DRUM");
   var checkBoxMuteBASS = document.getElementById("MUTE_BASS");
   var checkBoxMuteChord = document.getElementById("MUTE_CHORD");
+  var checkBoxMuteArp = document.getElementById("MUTE_ARP");
 
   switch(item){
     case "MUTE_DRUM":
-      if (checkBoxMuteDrum.checked == true) {screenMasterTop.value = "DRUM MUTE";}
-      else {screenMasterTop.value = "DRUM ON";}
+      if (checkBoxMuteDrum.checked == true) {
+        screenMasterTop.value = "DRUM MUTE";
+        kickVolume.volume.value = -100;
+        subKick.volume.value = -100;
+        snareVolume.volume.value = -100;
+        hhVolume.volume.value = -100;
+      }
+      else {
+        screenMasterTop.value = "DRUM ON";
+        kickVolume.volume.value = kickLevel;
+        subKick.volume.value = subLevel;
+        snareVolume.volume.value = snareLevel;
+        hhVolume.volume.value = hhLevel;
+      }
       break;
     case "MUTE_BASS":
-      if (checkBoxMuteBASS.checked == true) {screenMasterTop.value = "BASS MUTE";}
-      else {screenMasterTop.value = "BASS ON";}
+      if (checkBoxMuteBASS.checked == true) {
+        screenMasterTop.value = "BASS MUTE";
+        bassVolume.volume.value = -100;
+      }
+      else {
+        screenMasterTop.value = "BASS ON";
+        bassVolume.volume.value = bassLevel;
+      }
       break;
     case "MUTE_CHORD":
-      if (checkBoxMuteChord.checked == true) {screenMasterTop.value = "CHORD MUTE";}
-      else {screenMasterTop.value = "CHORD ON";}
+      if (checkBoxMuteChord.checked == true) {
+        chordVolume.volume.value = -100;
+        screenMasterTop.value = "CHORD MUTE";
+      }
+      else {
+        screenMasterTop.value = "CHORD ON";
+        chordVolume.volume.value = chordLevel;
+      }
       break;
+    case "MUTE_ARP":
+        if (checkBoxMuteArp.checked == true) {
+          screenMasterTop.value = "ARP MUTE";
+        }
+        else {
+          screenMasterTop.value = "ARP ON";
+        }
+        break;
   }
 }
 //MET A JOUR LE TITRE DE L'ECRAN PRINCIPAL LORSQU'ON TOUCHE AUX CONTROLES//
@@ -279,6 +317,7 @@ const addChordGrid = () => {
   //On passe la progression d'accord en absolu
   let relativeChordProgression = type[0]; //la bonne progression en chiffres romains
   let absoluteChordsProgression = toAbsoluteChordProgression(relativeChordProgression, key, mode);
+  console.log(absoluteChordsProgression)
 
   //On affiche dans l'écran les accords avec une police musicale et le chiffrage entre parenthèses
   var progressionDiv = document.getElementById('progression');
@@ -287,7 +326,7 @@ const addChordGrid = () => {
   // reinitialiser grid HTML
   progressionDiv.innerHTML = '';
   absoluteChordsProgression.forEach( (chord,index) => {
-      progressionDiv.innerHTML += htmlGridCodeStart + chord.replace('b','<sup>♭</sup>').replace('#','<sup>♯</sup>').replace('x','<sup>𝄪</sup>') +' (' + relativeChordProgression[index].replace('b','<sup>♭</sup>').replace('#','<sup>♯</sup>').replace('x','<sup>𝄪</sup>')  + ') '+ htmlGridCodeEnd;
+    progressionDiv.innerHTML += htmlGridCodeStart + chord.replace('b','<sup>♭</sup>').replace('#','<sup>♯</sup>').replace('x','<sup>𝄪</sup>') +' (' + relativeChordProgression[index].replace('b','<sup>♭</sup>').replace('#','<sup>♯</sup>').replace('x','<sup>𝄪</sup>')  + ') '+ htmlGridCodeEnd;
   });
   // Nombre de colonne de la grid en fonction du nombre d'accord
  progressionDiv.style.gridTemplateColumns = "repeat(" +   absoluteChordsProgression.length + ", 1fr)";
@@ -296,4 +335,10 @@ const addChordGrid = () => {
 
 }
 
-export {writeScreenRight,addChordGrid,addScreen,addScreenMute,addScreenControl,defaultScreen,parametersValues,modesNamesList,typesNamesList,patternsNamesList,updateKeys,updateTypes}
+//******************************************* FONCTION POUR LOADER LES SAMPLES ***************************************//
+function loadSamplesOnChange() {
+  loadSamples();
+  defaultScreen();
+}
+
+export {writeScreenRight, addChordGrid,addScreen,addScreenMute,addScreenControl,defaultScreen, loadSamplesOnChange,parametersValues,modesNamesList,typesNamesList,patternsNamesList,updateKeys,updateTypes}

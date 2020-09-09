@@ -40,7 +40,7 @@ export const createEvents = () => {
 
     let kickEventsArray = constructDrumEventsArray('C1',kickPattern,numberOfBars)
     let snareEventsArray = constructDrumEventsArray('C1',snarePattern,numberOfBars)
-    let hhEventsArray = constructDrumEventsArray('C1',hhPattern,numberOfBars)
+    let hhEventsArray = constructDrumEventsArray('C6',hhPattern,numberOfBars)
 
     let allEvents = [chordEventsArray,bassEventsArray,kickEventsArray,snareEventsArray,hhEventsArray]
     
