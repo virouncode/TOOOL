@@ -11,17 +11,17 @@
         <div class="logo">TØØØL</div>
 
         <div class="screen" id="MASTER_SCREEN">
-            <textarea id="SCREEN_TOP" class="screenAreaMasterTop" cols="50" rows="1" readonly>WELCOM TO THE TOOOL</textarea>
+            <textarea id="SCREEN_TOP" class="screenAreaMasterTop" cols="50" rows="1" readonly>WELCOME</textarea>
             <ul class="screenAreaMaster">
                 <li id="ScreenList1"></li>
                 <li id="ScreenList2">Tool for musicians, engineers and other audio artists.</li>
                 <li id="ScreenList3"></li>
                 <li id="ScreenList4">Royalty free sounds, loops and midi.</li>
                 <li id="ScreenList5"></li>
-                <li id="ScreenList6">-</li>
+                <li id="ScreenList6"></li>
                 <li id="ScreenList7">Made by passion !</li>
               </ul>
-            <textarea id="SCREEN_RIGHT" class="screenRight" cols="30" rows="8" readonly></textarea>
+            <textarea id="SCREEN_RIGHT" class="screenRight" cols="14" rows="8" readonly></textarea>
             <div class="screenMasterHighlight" id="MASTER_SCREEN_HIGH_LIGHT"></div>
         </div>
         <div class="progression" id="progression">
@@ -50,10 +50,10 @@
             <div class="textPot">TYPE</div>
         </div>
         <div class="linePot" id="LINE2">
-            <div class="pot"><input type="range" id="BPM" class="inputKnob" min="60" max="140" step="1" data-diameter="78" data-src="img/pot_2.svg" value="105"></div>
-            <div class="pot"><input type="range" id="KEY" class="inputKnob" min="0" max="11" step="1" data-diameter="78" data-src="img/pot_2.svg" value="0"></div>
-            <div class="pot"><input type="range" id="MODE" class="inputKnob" min="0" max="1" step="1" data-diameter="78" data-src="img/pot_2.svg" value="1"></div>
-            <div class="pot"><input type="range" id="TYPE" class="inputKnob" min="0" max="12" step="1" data-diameter="78" data-src="img/pot_2.svg" value="0"></div>
+            <div class="pot"><input type="range" id="BPM" class="inputKnob" min="55" max="140" step="1" data-diameter="67" data-src="img/pot_2.svg" value="105"></div>
+            <div class="pot"><input type="range" id="KEY" class="inputKnob" min="0" max="11" step="1" data-diameter="67" data-src="img/pot_2.svg" value="0"></div>
+            <div class="pot"><input type="range" id="MODE" class="inputKnob" min="0" max="1" step="1" data-diameter="67" data-src="img/pot_2.svg" value="1"></div>
+            <div class="pot"><input type="range" id="TYPE" class="inputKnob" min="0" max="12" step="1" data-diameter="67" data-src="img/pot_2.svg" value="0"></div>
         </div>
         <div class="linePot" id="LINE3">
             <div class="textPot">SAMPLE</div>
@@ -62,16 +62,16 @@
             <div class="textPot">LIFE</div>
         </div>
         <div class="linePot" id="LINE4">
-            <div class="pot"><input type="range" id="SAMPLE" class="inputKnob" min="0" max="4" step="1" data-diameter="78" data-src="img/pot_2_red.svg" value="0"></div>
-            <div class="pot"><input type="range" id="PATTERN" class="inputKnob" min="0" max="6" step="1" data-diameter="78" data-src="img/pot_2_red.svg" value="0"></div>
-            <div class="pot"><input type="range" id="REVERB" class="inputKnob" min="0" max="1" step="0.01" data-diameter="78" data-src="img/pot_2_red.svg" value="0.5"></div>
-            <div class="pot"><input type="range" id="LIFE" class="inputKnob" min="0" max="100" step="1" data-diameter="78" data-src="img/pot_2_red.svg" value="50"></div>
+            <div class="pot"><input type="range" id="SAMPLE" class="inputKnob" min="0" max="4" step="1" data-diameter="67" data-src="img/pot_2_red.svg" value="0"></div>
+            <div class="pot"><input type="range" id="PATTERN" class="inputKnob" min="0" max="6" step="1" data-diameter="67" data-src="img/pot_2_red.svg" value="0"></div>
+            <div class="pot"><input type="range" id="REVERB" class="inputKnob" min="0" max="1" step="0.01" data-diameter="67" data-src="img/pot_2_red.svg" value="0.5"></div>
+            <div class="pot"><input type="range" id="LIFE" class="inputKnob" min="0" max="100" step="1" data-diameter="67" data-src="img/pot_2_red.svg" value="50"></div>
         </div>
 
         <div class="lineChannel" id="LINE4">
             <div class="channel" id="CHANNEL_DRUM">
                 <div class="textChannel">DRUM</div>
-                <input type="range" id="SIDECHAIN" class="inputKnob" min="0" max="100" step="1" data-diameter="67" data-src="img/pot_1.svg"/>
+                <input type="range" id="SIDECHAIN" class="inputKnob" min="0" max="100" step="1" data-diameter="55" data-src="img/pot_1.svg"/>
                 <div class="muteButton">
                     <input type='checkbox' name='MUTE_DRUM' value='valuable' id="MUTE_DRUM">
                     <label for="MUTE_DRUM" class="muteButtonText"><div class="mute"></div></label>
@@ -81,7 +81,7 @@
             <div class="space_channel"></div>
             <div class="channel" id="CHANNEL_DRUM">
                 <div class="textChannel">BASS</div>
-                <input type="range" id="ACCENT" class="inputKnob" min="0" max="100" step="1" data-diameter="67" data-src="img/pot_1.svg">
+                <input type="range" id="ACCENT" class="inputKnob" min="0" max="100" step="1" data-diameter="55" data-src="img/pot_1.svg">
                 <div class="muteButton">
                     <input type='checkbox' name='MUTE_BASS' value='valuable' id="MUTE_BASS">
                     <label for="MUTE_BASS" class="muteButtonText"><div class="mute"></div></label>
@@ -91,7 +91,7 @@
             <div class="space_channel"></div>
             <div class="channel" id="CHANNEL_CHORD">
                 <div class="textChannel">CHORD</div>
-                <input type="range" id="ARP" class="inputKnob" min="0" max="100" step="1" data-diameter="67" data-src="img/pot_1.svg">
+                <input type="range" id="ARP" class="inputKnob" min="0" max="100" step="1" data-diameter="55" data-src="img/pot_1.svg">
                 <div class="muteButton">
                     <input type='checkbox' name='MUTE_CHORD' value='valuable' id="MUTE_CHORD">
                     <label for="MUTE_CHORD" class="muteButtonText"><div class="mute"></div></label>
@@ -101,7 +101,7 @@
             <div class="space_channel"></div>
             <div class="channel" id="CHANNEL_CHORD">
                 <div class="textChannel">ARP</div>
-                <input type="range" id="ARP" class="inputKnob" min="0" max="100" step="1" data-diameter="67" data-src="img/pot_1.svg">
+                <input type="range" id="ARP" class="inputKnob" min="0" max="100" step="1" data-diameter="55" data-src="img/pot_1.svg">
                 <div class="muteButton">
                     <input type='checkbox' name='MUTE_ARP' value='valuable' id="MUTE_ARP">
                     <label for="MUTE_ARP" class="muteButtonText"><div class="mute"></div></label>
@@ -124,7 +124,7 @@
             </div>
             <div class="masterVolume">
                 <div class="textVolume">VOLUME</div>
-                <input type="range" id="VOLUME" class="inputKnob" min="0" max="1" step="0.01" data-diameter="100" data-src="img/pot_1.svg" value="0.5">
+                <input type="range" id="VOLUME" class="inputKnob" min="0" max="1" step="0.01" data-diameter="80" data-src="img/pot_1.svg" value="0.5">
             </div>
             <div class="Button">
                 <input type='checkbox' name='PREVIOUS' value='valuable' id="PREVIOUS">

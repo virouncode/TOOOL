@@ -26,7 +26,7 @@
   margin-bottom: 0%;
   padding-right: 3%;
   width: 98.5%;
-  font-size: 110%;
+  font-size: 95%;
   height: 12%;
   border:0px;
   font-weight: bold;
@@ -39,11 +39,12 @@
 .screenAreaMaster {
   display: inline-block;
   vertical-align: top;
-  font-size: 100%;
+  font-size: 90%;
   margin-top: 0.7%;
-  margin-left: 1%;
+  margin-left: 0%;
+  padding-left: 0%;
   border: 0px;
-  width: 45%;
+  width: 53%;
   height: 75%;
   resize: none;
   font-weight: normal;
@@ -60,10 +61,10 @@
   margin-left: 0%;
   padding-left: 2%;
   width: 35%;
-  height: 76%;
-  resize: none;
+  height: 79%;
   font-size: 85%;
   background-color: transparent;
+  font-size: 70%;
 }
 
 .screenMasterHighlight {

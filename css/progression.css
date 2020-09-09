@@ -1,8 +1,8 @@
 .progression{
     display: grid;;
     position: center;
-    margin-top: 0%;
-    margin-bottom: 3%;
+    margin-top: -1%;
+    margin-bottom: 2%;
     margin-right: auto; 
     margin-left: auto;
     width: 97%;
@@ -45,7 +45,7 @@
     font-weight: bold;
     height: 100%;
     width: 100%;
-    font-size: 120%;
-    transform: translate(0%, -69%);
+    font-size: 100%;
+    transform: translate(0%, -75%);
     color: white;
 }
