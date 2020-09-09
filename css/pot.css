@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+.inputKnob {
+  margin-top: 0%;
+  display: inline-block;
+}
+
+.masterVolume{
+  grid-column: 4 ;
+  grid-row: 1 / span 2;
+  height: 90%;
+  width: 90%;
+}

@@ -1,0 +1,115 @@
+@charset "UTF-8";
+input[type=checkbox] {
+  display:none;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  border:none;
+}
+
+input[type=checkbox] + label{
+  display:inline-block;
+  background: url("../img/button_1.svg") no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  padding: 0%;
+  cursor: pointer;
+}
+
+input[type=checkbox]:checked + label{
+  display:inline-block;
+  background:url("../img/button_1_checked.svg") no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  padding: 0%;
+}
+
+.muteButtonText{
+  display:inline-block;
+  background: transparent;
+  font-weight: bold;
+  vertical-align: 60%;
+  color: rgba(27, 27, 26, 0.908);
+  font-size: 60%;
+  cursor: pointer;
+}
+
+.muteButton{
+  margin-top: 6%;
+  display: inline-block;
+  background: transparent;
+  height: 31%;
+  width: 100%;
+}
+
+.ButtonText{
+  background: transparent;
+  font-weight: bold;
+  vertical-align: 60%;
+  color: rgba(27, 27, 26, 0.908);
+  font-size: 60%;
+  cursor: pointer;
+}
+
+.Button{
+  margin-top: 0%;
+  background: transparent;
+  height: 84%;
+  width: 84%;
+}
+
+.play, .stop, .export, .previous, .next, .random, .mute {
+  display: inline-block;
+  margin-top: 2%;
+  opacity: 0.85;
+  padding: 0%;
+  margin: 0%;
+}
+
+.mute{
+  background: url("../img/mute.svg") no-repeat center center;
+  background-size: contain;
+  height: 100%;
+  width: 28%;
+}
+
+.play{
+  background: url("../img/play.svg") no-repeat center center;
+  height: 100%;
+  width: 28%;
+}
+
+.stop{
+  background: url("../img/stop.svg") no-repeat center center;
+  background-size: contain;
+  height: 100%;
+  width: 24%;
+}
+
+.export{
+  background: url("../img/export.svg") no-repeat center center;
+  background-size: contain;
+  height: 100%;
+  width: 33%;
+}
+
+.previous{
+  background: url("../img/previous.svg") no-repeat center center;
+  height: 100%;
+  width: 30%;
+}
+
+.next{
+  background: url("../img/next.svg") no-repeat center center;
+  height: 100%;
+  width: 30%;
+}
+
+.random{
+  background: url("../img/random.svg") no-repeat center center;
+  height: 100%;
+  width: 30%;
+}

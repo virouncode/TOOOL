@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+.screen, .screenAreaMaster, .screenAreaMasterTop, .screenRight, .screenSmall {
+  font-family: Oxygen;
+  font-size: 94%;
+  color: rgb(248, 245, 242);
+}
+.screen {
+  margin-top: 0%;
+  margin-bottom: 2%;
+  display: inline-block;
+  background: url("../img/screen.svg#svgView(preserveAspectRatio(none))") no-repeat;
+  background-size: 100% 100%;
+  height: 17.5%;
+  width: 98%;
+  border-width: 0px;
+  opacity: 0.9;
+}
+
+.screenAreaMasterTop {
+  display: inline-block;
+  border-radius: 8px;
+  -moz-border-radius:  15px;
+  -webkit-border-radius:  8px;
+  margin-top: 0.7%;
+  margin-bottom: 0%;
+  padding-right: 3%;
+  width: 98.5%;
+  font-size: 110%;
+  height: 12%;
+  border:0px;
+  font-weight: bold;
+  resize: none;
+  text-align: center;
+  vertical-align: top;
+  background-color: rgba(41, 37, 37, 0.2);
+}
+
+.screenAreaMaster {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 100%;
+  margin-top: 0.7%;
+  margin-left: 1%;
+  border: 0px;
+  width: 45%;
+  height: 75%;
+  resize: none;
+  font-weight: normal;
+  text-align: left;
+  background-color: transparent;
+}
+
+.screenRight {
+  display: inline-block;
+  vertical-align: top;
+  border: 0px;
+  border-left: 2px solid rgba(0, 0, 0, 0.2);
+  margin-top: 0.7%;
+  margin-left: 0%;
+  padding-left: 2%;
+  width: 35%;
+  height: 76%;
+  resize: none;
+  font-size: 85%;
+  background-color: transparent;
+}
+
+.screenMasterHighlight {
+  height: 110%;
+  width: 100%;
+  background: url("../img/screen_highlight.svg#svgView(preserveAspectRatio(none))") no-repeat;
+  transform: translate(0%, -89%);
+  background-size: 92% 92%;
+  opacity: 0.4;
+}
