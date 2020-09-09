@@ -121,7 +121,7 @@ ul {
 .textChannel {
   height: 6%;
   width: 100%;
-  font-size: 110%;
+  font-size: 105%;
   padding-bottom: 15%;
 }
 
@@ -132,7 +132,7 @@ ul {
   display: inline-block;
   background: url("../img/channel_background.svg#svgView(preserveAspectRatio(none))") no-repeat;
   background-size: 100% 100%;
-  width: 26%;
+  width: 20%;
   height: 16%;
   background-position: center;
 }
@@ -155,5 +155,5 @@ ul {
 
 .space_channel{
   display: inline-block;
-  margin-left: 3%;
+  margin-left: 1.5%;
 }
