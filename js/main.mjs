@@ -313,7 +313,6 @@ rotativePartButtons.forEach( (button) => {
     button.addEventListener('input', (e)=>{    
         addScreen(e.target.value,e.target.id);
         addChordGrid();
-        refreshEvents();             //on change le playback 
         e.stopPropagation();
     });
     button.addEventListener('mousedown', (e)=>{ 
@@ -322,6 +321,7 @@ rotativePartButtons.forEach( (button) => {
         e.stopPropagation();
     });
     button.addEventListener('change', (e)=>{
+        refreshEvents();  //on change le playback 
         defaultScreen();
         e.stopPropagation();
     });
@@ -333,6 +333,7 @@ modeBtn.addEventListener('input', (e)=> {
   updateKeys(parametersValues[2]); //on met à jour la liste des keys
   updateTypes(parametersValues[2]);//on met à jour la liste des types et on ramène le bouton type à 0
   addScreen(e.target.value,e.target.id);
+  addChordGrid();
   refreshEvents();
 })
 modeBtn.addEventListener('mousedown', (e)=>{ 
