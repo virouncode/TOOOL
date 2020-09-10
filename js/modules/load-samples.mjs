@@ -4,7 +4,7 @@ import {chord, bass, kick, snare, hh} from './console.mjs';
 function loadSamples(){
     // Repertory Samples Select
     const SamplesBtn = samplesList[parametersValues[4]];
-    const RepertorySamples = "SAMPLES/" + SamplesBtn + "/";
+    const RepertorySamples = "samples/" + SamplesBtn + "/";
     
     var audioSamples = [
         RepertorySamples + "Chord-C2.ogg",
@@ -135,7 +135,7 @@ function loadSamples(){
 function loadSamplesWave(){
     // Repertory Samples Select
     const SamplesBtn = samplesList[parametersValues[4]];
-    const RepertorySamples = "SAMPLES/" + SamplesBtn + "/";
+    const RepertorySamples = "samples/" + SamplesBtn + "/";
     
     var audioSamples = [
         RepertorySamples + "Chord-C2.wav",
