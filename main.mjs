@@ -293,8 +293,89 @@ window.addEventListener("load", () => {
   });
  
   
- //Listeners// 
-rotativeButtons.forEach( (button) => {
+ //Listeners//
+ 
+ 
+if (( window.innerWidth <= 800 ) && ( window.innerHeight <= 600 )) {
+  rotativeButtons.forEach( (button) => {
+      button.addEventListener('touchmove', (e)=>{     //lorsqu'on tourne le bouton 
+          addScreen(e.target.value,e.target.id);
+          e.stopPropagation();
+      });
+      button.addEventListener('touchstart', (e)=>{   //lorsqu'on appuie sur le bouton 
+          addScreen(e.target.value,e.target.id)
+          e.stopPropagation();
+      });
+      button.addEventListener('touchend', (e)=>{    //lorsqu'on relève le bouton
+          defaultScreen();
+          e.stopPropagation();
+      });
+  })
+
+  rotativePartButtons.forEach( (button) => {
+      button.addEventListener('touchmove', (e)=>{    
+          addScreen(e.target.value,e.target.id);
+          addChordGrid();
+          refreshEvents();             //on change le playback 
+          e.stopPropagation();
+      });
+      button.addEventListener('touchstart', (e)=>{ 
+          addScreen(e.target.value,e.target.id);
+          addChordGrid();
+          e.stopPropagation();
+      });
+      button.addEventListener('touchend', (e)=>{
+          defaultScreen();
+          e.stopPropagation();
+      });
+  })
+
+  //Le bouton mode est à part car il doit faire changer la liste des keys et des types, ramener le bouton type à 0
+  modeBtn.addEventListener('touchmove', (e)=> {
+    setParameterValue(e.target.value,2);   //on écrit la valeur du mode
+    updateKeys(parametersValues[2]); //on met à jour la liste des keys
+    updateTypes(parametersValues[2]);//on met à jour la liste des types et on ramène le bouton type à 0
+    addScreen(e.target.value,e.target.id);
+    refreshEvents();
+  })
+  modeBtn.addEventListener('touchstart', (e)=>{ 
+    addScreen(e.target.value,e.target.id);
+    e.stopPropagation();
+  });
+  modeBtn.addEventListener('touchend', (e)=>{
+    defaultScreen();
+    e.stopPropagation();
+  });
+
+  //Quand on tourne le bouton type, la grid d'accords se met à jour 
+  typeBtn.addEventListener('touchmove',(e) => {
+    addChordGrid();
+  })
+
+  //Le bouton sample est à part car il doit lancer l'upload des samples uniquement sur relachement du pot
+  sampleBtn.addEventListener('touchmove', (e)=> {
+    addScreen(e.target.value,e.target.id);
+    e.stopPropagation();
+  })
+  sampleBtn.addEventListener('touchstart', (e)=>{ 
+    addScreen(e.target.value,e.target.id);
+    e.stopPropagation();
+  });
+  sampleBtn.addEventListener('touchend', (e)=>{
+    loadSamplesOnChange();
+    e.stopPropagation();
+  });
+
+
+  muteButtons.forEach ( (button)=> {
+      button.addEventListener('click', (e)=>{addScreenMute(e.target.id)});
+  })
+  controlButtons.forEach ( (button)=> {
+      button.addEventListener('click', (e)=>{addScreenControl(e.target.id)});
+  })
+}
+else {
+  rotativeButtons.forEach( (button) => {
     button.addEventListener('input', (e)=>{     //lorsqu'on tourne le bouton 
         addScreen(e.target.value,e.target.id);
         e.stopPropagation();
@@ -370,7 +451,7 @@ muteButtons.forEach ( (button)=> {
 controlButtons.forEach ( (button)=> {
     button.addEventListener('click', (e)=>{addScreenControl(e.target.id)});
 })
-
+}
 
 
 
