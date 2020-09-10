@@ -317,7 +317,6 @@ const addChordGrid = () => {
   //On passe la progression d'accord en absolu
   let relativeChordProgression = type[0]; //la bonne progression en chiffres romains
   let absoluteChordsProgression = toAbsoluteChordProgression(relativeChordProgression, key, mode);
-  console.log(absoluteChordsProgression)
 
   //On affiche dans l'écran les accords avec une police musicale et le chiffrage entre parenthèses
   var progressionDiv = document.getElementById('progression');
@@ -335,7 +334,7 @@ const addChordGrid = () => {
 
 }
 
-//******************************************* FONCTION POUR LOADER LES SAMPLES ***************************************//
+//******************************************* FONCTION POUR LOADER LES samples ***************************************//
 function loadSamplesOnChange() {
   loadSamples();
   defaultScreen();
