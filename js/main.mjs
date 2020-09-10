@@ -1,7 +1,8 @@
 import {defaultScreen, addScreenControl,addScreenMute,addScreen,loadSamplesOnChange,updateKeys,updateTypes} from './modules/screen-functions.mjs'
-import {refreshEvents } from './modules/events.mjs';
+import {refreshEvents, refreshPattern} from './modules/events.mjs';
 import {parametersValues,setParameterValue} from './modules/parameters.mjs'
-import { addChordGrid, writeScreenRight} from './modules/screen-functions.mjs';
+import {addChordGrid, writeScreenRight} from './modules/screen-functions.mjs';
+import {playStatus} from './modules/player.mjs';
 
 //Recupération des potards//
 let bpmBtn = document.querySelector("#BPM"); 
@@ -26,21 +27,19 @@ let previousBtn = document.querySelector("#PREVIOUS");
 let nextBtn = document.querySelector("#NEXT");
 let randomBtn = document.querySelector("#RANDOM");
 
-const rotativeButtons = [   //tous les potards qui ne changent pas la partition
+const rotativeButtons = [ //tous les potards qui ne changent pas la partition
     bpmBtn,
-    sampleBtn,
     reverbBtn,
     lifeBtn,
-    sidechainBtn,   
+    sidechainBtn,
     accentBtn,
     arpBtn,
     volumeBtn
 ]
 
-const rotativePartButtons = [    //tous les boutons qui changent la partition (autres que le bouton mode)
+const rotativePartButtons = [ //tous les boutons qui changent la partition (autres que le bouton mode)
     keyBtn,
-    typeBtn,
-    patternBtn  
+    typeBtn
 ]
 
 const muteButtons =[    
@@ -364,6 +363,19 @@ sampleBtn.addEventListener('change', (e)=>{
   e.stopPropagation();
 });
 
+patternBtn.addEventListener('input', (e)=> {
+  addScreen(e.target.value,e.target.id);
+  e.stopPropagation();
+})
+patternBtn.addEventListener('mousedown', (e)=>{ 
+  addScreen(e.target.value,e.target.id);
+  e.stopPropagation();
+});
+patternBtn.addEventListener('change', (e)=>{  
+  refreshPattern();
+  defaultScreen();
+  e.stopPropagation();
+});
 
 muteButtons.forEach ( (button)=> {
     button.addEventListener('click', (e)=>{addScreenMute(e.target.id)});

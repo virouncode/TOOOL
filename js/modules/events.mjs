@@ -93,3 +93,50 @@ export const refreshEvents = () => {
 
     Tone.Transport.start()
 }
+
+export const refreshPattern = () => {
+    
+    let allEvents = createEvents()
+    let [chordEvents, bassEvents, kickEvents, snareEvents, hhEvents] = allEvents[0]
+    let numberOfBars = allEvents[1]
+
+    Tone.Transport.pause()
+
+    chordPart.clear()
+    for (let i=0;i<chordEvents.length;i++){
+        chordPart.add(chordEvents[i])
+        chordPart.loopEnd = numberOfBars.toString()+'m'
+    }
+
+    bassPart.clear()
+    for (let i=0;i<bassEvents.length;i++){
+        bassPart.add(bassEvents[i])
+        bassPart.loopEnd = numberOfBars.toString()+'m'
+    }
+
+    subKickPart.clear()
+    for (let i=0;i<kickEvents.length;i++){
+        subKickPart.add(kickEvents[i])
+        subKickPart.loopEnd = numberOfBars.toString()+'m'
+    }
+
+    kickPart.clear()
+    for (let i=0;i<kickEvents.length;i++){
+        kickPart.add(kickEvents[i])
+        kickPart.loopEnd = numberOfBars.toString()+'m'
+    }
+
+    snarePart.clear()
+    for (let i=0;i<snareEvents.length;i++){
+        snarePart.add(snareEvents[i])
+        snarePart.loopEnd = numberOfBars.toString()+'m'
+    }
+
+    hhPart.clear()
+    for (let i=0;i<hhEvents.length;i++){
+        hhPart.add(hhEvents[i])
+        hhPart.loopEnd = numberOfBars.toString()+'m'
+    }
+    
+    Tone.Transport.start()
+}

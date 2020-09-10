@@ -220,7 +220,7 @@ function loadSamplesWave(){
     hh.add('C6', audioSamples[33]);
 
     // Buffer qui attend que tous les samples soient chargés
-    var hhBuffer = new Tone.Buffers({
+    var samplesBuffer = new Tone.Buffers({
         "C2" : audioSamples[0],
         "D#2" : audioSamples[1],
         "F#2" : audioSamples[2],

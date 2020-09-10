@@ -2,7 +2,7 @@
     display: grid;;
     position: center;
     margin-top: -1%;
-    margin-bottom: 2%;
+    margin-bottom: 0%;
     margin-right: auto; 
     margin-left: auto;
     width: 97%;
@@ -12,40 +12,47 @@
     text-align: center;
     align-items: center;
     grid-column-gap: 10%;
-    opacity: 0.85;
+    opacity: 1;
   }
   
-.screenProgressionHighlight {
-  height: 100%;
-  width: 100%;
-  background: url("../img/screen_small_highlight.svg#svgView(preserveAspectRatio(none))") no-repeat;
-  transform: translate(3%, -2%);
-  background-size: 100% 100%;
-  opacity: 0.0;
-}
-
 .screenProgression {
-  margin-top: 0%;
-  margin-bottom: 0%;
-  padding: 0%;
   color: rgba(29, 27, 27, 0.79);
-  text-align: center;
   font-weight: normal;
+  text-align: center;
   font-size: 70%;
-  display: inline-block;
+  position: relative;
   background: url("../img/screen_small.svg#svgView(preserveAspectRatio(none))") no-repeat;
   background-size: 100% 100%;
   background-position: center;
   height: 100%;
   width: 100%;
 }
+.screenProgressionHighlight {
+  position: absolute;
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+  width: 100%;
+  background: url("../img/screen_small_highlight.svg#svgView(preserveAspectRatio(none))") no-repeat;
+  background-size: 100% 100%;
+  opacity: 0.7;
+}
 
 .progressionTxt {
     display: inline-block;
-    font-weight: bold;
-    height: 100%;
-    width: 100%;
-    font-size: 100%;
-    transform: translate(0%, -75%);
+    font-weight: normal;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 10%;
+    height: 85%;
+    width: 85%;
+    line-height: 97%;
+    font-size: 110%;
     color: white;
 }

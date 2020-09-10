@@ -75,6 +75,20 @@ ul {
 
 .linePot {
   position: center;
+  margin-top: 0%;
+  margin-right: 2%; 
+  margin-left: 2%;
+  text-align: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 22.5% 22.5% 22.5% 22.5%;
+  grid-template-rows: auto;
+  grid-column-gap: 3%;
+  grid-row-gap: 3%;
+}
+
+.lineTextPot {
+  position: center;
   margin-top: 1%;
   margin-right: 2%; 
   margin-left: 2%;
@@ -96,10 +110,6 @@ ul {
 .textPot {
   display: inline-block;
   font-size: 85%;
-  border: 1px solid rgba(230, 239, 243, 0.3);
-  border-radius: 4px;
-  background-color: rgba(117, 161, 167, 0.1);
-  box-shadow: inset 1px 1px 10px rgba(0,0,0,0.3);
 }
 
 .pot {
@@ -109,21 +119,31 @@ ul {
 .textVolume {
   display: inline-block;
   font-size: 85%;
-  border: 1px solid rgba(230, 239, 243, 0.3);
-  border-radius: 4px;
-  background-color: rgba(117, 161, 167, 0.1);
-  box-shadow: inset 1px 1px 10px rgba(0,0,0,0.3);
   padding-right: 12%; 
   padding-left: 12%;
-  margin: 6%;
+  margin: 1%;
 }
 
 .textChannel {
   height: 6%;
   width: 100%;
-  font-size: 95%;
+  font-size: 90%;
   margin-top: -4%;
   padding-bottom: 15%;
+}
+
+.textVertical {
+  /*height: 6%;
+  width: 20%;*/
+  font-size: 80%;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  margin-left: -78%;
+  margin-top: -37%;
 }
 
 .channel {

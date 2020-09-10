@@ -1,4 +1,4 @@
-import {mainBPM} from './player.mjs'
+import {mainBPM, playStatus} from './player.mjs'
 import {masterReverb, PitchChordVolume, sidechainCurve, mainVolume, chordLevel, bassLevel, subLevel, kickLevel, snareLevel, hhLevel, chordVolume, bassVolume, kickVolume, snareVolume, hhVolume, subKick} from './console.mjs'
 import {keysNamesArray, toAbsoluteChordProgression} from './music-functions.mjs'
 import {typesNamesArray} from './types.mjs'
@@ -155,12 +155,19 @@ const addScreenControl =(item) =>{
 
   switch(item){
     case "PLAY":
-      if (checkBoxPlay.checked == true) {screenMasterTop.value = "PLAY";}
-      else {screenMasterTop.value = "STOP";}
+      if (checkBoxPlay.checked == true && playStatus == 0) {screenMasterTop.value = "PLAY";}
+      else {
+        screenMasterTop.value = "STOP";
+      }
       break;
     case "STOP":
-      if (checkBoxStop.checked == true) {screenMasterTop.value = "STOP";}
-      else {screenMasterTop.value = "...";}
+      if (checkBoxStop.checked == true && playStatus == 1) {
+        checkBoxPlay.checked == false;
+        screenMasterTop.value = "STOP";
+      }
+      else {
+        screenMasterTop.value = "...";
+      }
       break;
     case "EXPORT":
       if (checkBoxExport.checked == true) {screenMasterTop.value = "EXPORT";}
@@ -321,12 +328,12 @@ const addChordGrid = () => {
 
   //On affiche dans l'écran les accords avec une police musicale et le chiffrage entre parenthèses
   var progressionDiv = document.getElementById('progression');
-  var htmlGridCodeStart = '<div class="screenProgression" id="chordScreen"><div class="screenProgressionHighlight" id="SMALL_SCREEN_HIGH_LIGHT"></div><div class="progressionTxt" id="progressionTxt">';
-  var htmlGridCodeEnd = '</div></div>';
+  var htmlGridCodeStart = '<div class="screenProgression" id="chordScreen"><div class="screenProgressionHighlight" id="SMALL_SCREEN_HIGH_LIGHT"><div class="progressionTxt" id="progressionTxt">';
+  var htmlGridCodeEnd = '</div></div></div>';
   // reinitialiser grid HTML
   progressionDiv.innerHTML = '';
   absoluteChordsProgression.forEach( (chord,index) => {
-    progressionDiv.innerHTML += htmlGridCodeStart + chord.replace('b','<sup>♭</sup>').replace('#','<sup>♯</sup>').replace('x','<sup>𝄪</sup>') +' (' + relativeChordProgression[index].replace('b','<sup>♭</sup>').replace('#','<sup>♯</sup>').replace('x','<sup>𝄪</sup>')  + ') '+ htmlGridCodeEnd;
+    progressionDiv.innerHTML += htmlGridCodeStart + "<b>" + chord.replace('b','<sup>♭</sup>').replace('#','<sup>♯</sup>').replace('x','<sup>𝄪</sup>') + "</b><br/>" +'[ ' + relativeChordProgression[index].replace('b','<sup>♭</sup>').replace('#','<sup>♯</sup>').replace('x','<sup>𝄪</sup>')  + ' ]'+ htmlGridCodeEnd;
   });
   // Nombre de colonne de la grid en fonction du nombre d'accord
  progressionDiv.style.gridTemplateColumns = "repeat(" +   absoluteChordsProgression.length + ", 1fr)";
