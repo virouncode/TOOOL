@@ -38,7 +38,7 @@ input[type=checkbox]:checked + label{
 }
 
 .muteButton{
-  margin-top: 6%;
+  margin-top: 30%;
   display: inline-block;
   background: transparent;
   height: 31%;

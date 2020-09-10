@@ -26,8 +26,9 @@
         </div>
         <div class="progression" id="progression">
             <div class="screenProgression" id="chordScreen">
-                <div class="screenProgressionHighlight" id="SMALL_SCREEN_HIGH_LIGHT"></div>
-                <div class="progressionTxt" id="progressionTxt">...</div>
+                <div class="screenProgressionHighlight" id="SMALL_SCREEN_HIGH_LIGHT">
+                    <div class="progressionTxt" id="progressionTxt">...</div>
+                </div>
             </div>
             <div class="screenProgression" id="chordScreen">
                 <div class="screenProgressionHighlight" id="SMALL_SCREEN_HIGH_LIGHT"></div>
@@ -43,19 +44,19 @@
             </div>
         </div>
 
-        <div class="linePot" id="LINE1">
+        <div class="lineTextPot" id="LINE1">
             <div class="textPot">BPM</div>
             <div class="textPot">KEY</div>
             <div class="textPot">MOOD</div>
             <div class="textPot">TYPE</div>
         </div>
         <div class="linePot" id="LINE2">
-            <div class="pot"><input type="range" id="BPM" class="inputKnob" min="55" max="140" step="1" data-diameter="67" data-src="img/pot_2.svg" value="105"></div>
+            <div class="pot"><input type="range" id="BPM" class="inputKnob" min="58" max="140" step="1" data-diameter="67" data-src="img/pot_2.svg" value="105"></div>
             <div class="pot"><input type="range" id="KEY" class="inputKnob" min="0" max="11" step="1" data-diameter="67" data-src="img/pot_2.svg" value="0"></div>
             <div class="pot"><input type="range" id="MODE" class="inputKnob" min="0" max="1" step="1" data-diameter="67" data-src="img/pot_2.svg" value="1"></div>
             <div class="pot"><input type="range" id="TYPE" class="inputKnob" min="0" max="12" step="1" data-diameter="67" data-src="img/pot_2.svg" value="0"></div>
         </div>
-        <div class="linePot" id="LINE3">
+        <div class="lineTextPot" id="LINE3">
             <div class="textPot">SAMPLE</div>
             <div class="textPot">PATTERN</div>
             <div class="textPot">REVERB</div>
@@ -71,7 +72,8 @@
         <div class="lineChannel" id="LINE4">
             <div class="channel" id="CHANNEL_DRUM">
                 <div class="textChannel">DRUM</div>
-                <input type="range" id="SIDECHAIN" class="inputKnob" min="0" max="100" step="1" data-diameter="55" data-src="img/pot_1.svg"/>
+                <input type="range" id="SIDECHAIN" class="inputKnob" min="0" max="100" step="1" data-diameter="58" data-src="img/pot_1.svg"/>
+                <div class="textVertical">SIDECHAIN</div>
                 <div class="muteButton">
                     <input type='checkbox' name='MUTE_DRUM' value='valuable' id="MUTE_DRUM">
                     <label for="MUTE_DRUM" class="muteButtonText"><div class="mute"></div></label>
@@ -81,7 +83,8 @@
             <div class="space_channel"></div>
             <div class="channel" id="CHANNEL_DRUM">
                 <div class="textChannel">BASS</div>
-                <input type="range" id="ACCENT" class="inputKnob" min="0" max="100" step="1" data-diameter="55" data-src="img/pot_1.svg">
+                <input type="range" id="ACCENT" class="inputKnob" min="0" max="100" step="1" data-diameter="58" data-src="img/pot_1.svg">
+                <div class="textVertical">ACCENT</div>
                 <div class="muteButton">
                     <input type='checkbox' name='MUTE_BASS' value='valuable' id="MUTE_BASS">
                     <label for="MUTE_BASS" class="muteButtonText"><div class="mute"></div></label>
@@ -91,7 +94,8 @@
             <div class="space_channel"></div>
             <div class="channel" id="CHANNEL_CHORD">
                 <div class="textChannel">CHORD</div>
-                <input type="range" id="ARP" class="inputKnob" min="0" max="100" step="1" data-diameter="55" data-src="img/pot_1.svg">
+                <input type="range" id="ARP" class="inputKnob" min="0" max="100" step="1" data-diameter="58" data-src="img/pot_1.svg">
+                <div class="textVertical">ENHANCE</div>
                 <div class="muteButton">
                     <input type='checkbox' name='MUTE_CHORD' value='valuable' id="MUTE_CHORD">
                     <label for="MUTE_CHORD" class="muteButtonText"><div class="mute"></div></label>
@@ -101,7 +105,8 @@
             <div class="space_channel"></div>
             <div class="channel" id="CHANNEL_CHORD">
                 <div class="textChannel">ARP</div>
-                <input type="range" id="ARP" class="inputKnob" min="0" max="100" step="1" data-diameter="55" data-src="img/pot_1.svg">
+                <input type="range" id="ARP" class="inputKnob" min="0" max="100" step="1" data-diameter="58" data-src="img/pot_1.svg">
+                <div class="textVertical">SELECT</div>
                 <div class="muteButton">
                     <input type='checkbox' name='MUTE_ARP' value='valuable' id="MUTE_ARP">
                     <label for="MUTE_ARP" class="muteButtonText"><div class="mute"></div></label>
@@ -111,7 +116,7 @@
 
         <div class="control">
             <div class="Button">
-                <input type='checkbox' name='PLAY' value='valuable' id="PLAY">
+                <input type='checkbox' name='PLAY' value='valuable' id="PLAY" checked>
                 <label for="PLAY" class="ButtonText"><div class="play"></div></label>
             </div>
             <div class="Button">
@@ -124,7 +129,7 @@
             </div>
             <div class="masterVolume">
                 <div class="textVolume">VOLUME</div>
-                <input type="range" id="VOLUME" class="inputKnob" min="0" max="1" step="0.01" data-diameter="80" data-src="img/pot_1.svg" value="0.5">
+                <input type="range" id="VOLUME" class="inputKnob" min="0" max="1" step="0.01" data-diameter="90" data-src="img/pot_1.svg" value="0.5">
             </div>
             <div class="Button">
                 <input type='checkbox' name='PREVIOUS' value='valuable' id="PREVIOUS">

@@ -2,20 +2,45 @@ import {mainVolume, sideChain} from './console.mjs'
 import {kick, subKick, snare, chord, bass, hh} from './console.mjs'
 import {createEvents} from './events.mjs'
 import {loadSamples} from './load-samples.mjs'
+
 //************************************TRANSPORT CONTROLS****************************//
+var checkBoxPlay = document.getElementById("PLAY");
+var checkBoxStop = document.getElementById("STOP");
+
+// Variable d'état de lecture, par défaut play à l'ouverture de l'app
+let playStatus = 1;
 
 //PLAY//
 let play=document.querySelector("#PLAY");
 play.addEventListener('click',()=>{
+  if (playStatus == 0) {
+    playStatus = 1;
     Tone.start();
     Tone.Transport.start();
     mainVolume.mute = false;
+    checkBoxPlay.checked = true;
+    checkBoxStop.checked = false;
+  }
+  else {
+    playStatus = 0;
+    Tone.Transport.stop();
+    mainVolume.mute = true;
+    checkBoxPlay.checked = false; 
+    checkBoxStop.checked = true;
+  }
 });
 //STOP//
 let stop=document.querySelector("#STOP");
 stop.addEventListener('click',()=>{
+  if (playStatus == 1) {
+    playStatus = 0;
     Tone.Transport.stop();
+    checkBoxPlay.checked = false; 
     mainVolume.mute = true;
+  }
+  else {
+    checkBoxStop.checked = true;
+  }
 });
 //SPACE BAR//
 document.body.addEventListener ('keyup' , (e) => {
@@ -96,5 +121,5 @@ hhPart.loopEnd = numberOfBars.toString()+'m';
 //Load All Samples and play
 loadSamples();
 
-export {mainBPM, chordPart, subKickPart,bassPart, kickPart, snarePart,hhPart}
+export {mainBPM, chordPart, subKickPart,bassPart, kickPart, snarePart,hhPart, playStatus}
 
