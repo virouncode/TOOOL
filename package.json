@@ -1,13 +1,25 @@
 {
-  "name": "codenew",
+  "name": "toool",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/virouncode/toool.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/virouncode/toool/issues"
+  },
+  "homepage": "https://github.com/virouncode/toool#readme",
+  "devDependencies": {
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
   "dependencies": {
     "tone": "^14.7.39"
   }
