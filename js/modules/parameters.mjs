@@ -3,7 +3,7 @@ import {keysNamesArray} from './music-functions.mjs';
 import {typesNamesArray} from './types.mjs';
 
 const parametersNames = ['BPM', 'KEY', 'MOOD', 'TYPE', 'SAMPLE', 'PATTERN', 'REVERB', 'LIFE', 'SIDECHAIN', 'ACCENT', 'ARP', 'VOLUME'];
-let parametersValues = [105, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0];
+let parametersValues = [105, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0];
 let keysNamesList = keysNamesArray.minor; 
 const modesNamesList = ['Major', 'Minor'];
 let typesNamesList = typesNamesArray.minor;

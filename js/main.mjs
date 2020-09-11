@@ -7,7 +7,6 @@ import {playStatus} from './modules/player.mjs';
 //Recupération des potards//
 let bpmBtn = document.querySelector("#BPM"); 
 let keyBtn = document.querySelector("#KEY");
-let modeBtn = document.querySelector("#MODE");
 let typeBtn = document.querySelector("#TYPE");
 let sampleBtn = document.querySelector("#SAMPLE");
 let patternBtn = document.querySelector("#PATTERN");
@@ -19,13 +18,12 @@ let accentBtn = document.querySelector("#ACCENT");
 let muteBassBtn = document.querySelector("#MUTE_BASS");
 let arpBtn = document.querySelector("#ARP");
 let muteChordBtn = document.querySelector("#MUTE_CHORD");
+let muteArpdBtn = document.querySelector("#MUTE_ARP");
 let playBtn = document.querySelector("#PLAY");
 let stopBtn = document.querySelector("#STOP");
 let exportBtn = document.querySelector("#EXPORT");
-let volumeBtn = document.querySelector("#VOLUME");
-let previousBtn = document.querySelector("#PREVIOUS");
-let nextBtn = document.querySelector("#NEXT");
 let randomBtn = document.querySelector("#RANDOM");
+let moodBtn = document.querySelector("#MOOD");
 
 const rotativeButtons = [ //tous les potards qui ne changent pas la partition
     bpmBtn,
@@ -33,8 +31,7 @@ const rotativeButtons = [ //tous les potards qui ne changent pas la partition
     lifeBtn,
     sidechainBtn,
     accentBtn,
-    arpBtn,
-    volumeBtn
+    arpBtn
 ]
 
 const rotativePartButtons = [ //tous les boutons qui changent la partition (autres que le bouton mode)
@@ -45,14 +42,14 @@ const rotativePartButtons = [ //tous les boutons qui changent la partition (autr
 const muteButtons =[    
     muteDrumBtn,
     muteBassBtn,
-    muteChordBtn
+    muteChordBtn,
+    muteArpdBtn
 ]
+
 const controlButtons = [
     playBtn,
     stopBtn,
     exportBtn,
-    previousBtn,
-    nextBtn,
     randomBtn
 ]
 var screenRight = document.getElementById("SCREEN_RIGHT");  //Ecran de droite
@@ -326,21 +323,27 @@ rotativePartButtons.forEach( (button) => {
     });
 })
 
-//Le bouton mode est à part car il doit faire changer la liste des keys et des types, ramener le bouton type à 0
-modeBtn.addEventListener('input', (e)=> {
-  setParameterValue(e.target.value,2);   //on écrit la valeur du mode
+// Le bouton mood doit faire changer la liste des keys et des types, ramener le bouton type à 0
+moodBtn.addEventListener('input', (e)=> {
+  let moodStatus = 0; // variable 0 ou 1 pour les fonctions de mise à jour des listes d'accords
+  if (e.target.checked)
+    moodStatus = 1;
+  else
+    moodStatus = 0;
+
+  setParameterValue(moodStatus,2);   //on écrit la valeur du mode
   updateKeys(parametersValues[2]); //on met à jour la liste des keys
   updateTypes(parametersValues[2]);//on met à jour la liste des types et on ramène le bouton type à 0
-  addScreen(e.target.value,e.target.id);
+  addScreen(moodStatus,e.target.id);
   addChordGrid();
   refreshEvents();
 })
-modeBtn.addEventListener('mousedown', (e)=>{ 
+moodBtn.addEventListener('mousedown', (e)=>{ 
   addScreen(e.target.value,e.target.id);
   e.stopPropagation();
 });
-modeBtn.addEventListener('change', (e)=>{
-  defaultScreen();
+moodBtn.addEventListener('change', (e)=>{
+  loadSamplesOnChange();
   e.stopPropagation();
 });
 

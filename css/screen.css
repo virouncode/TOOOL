@@ -15,6 +15,8 @@
   width: 98%;
   border-width: 0px;
   opacity: 0.9;
+  -webkit-filter: drop-shadow(3px 3px 3px rgba(38, 39, 39, 0.4));
+  filter: drop-shadow(3px 3px 3px rgba(38, 39, 39, 0.4));
 }
 
 .screenAreaMasterTop {
@@ -73,5 +75,5 @@
   background: url("../img/screen_highlight.svg#svgView(preserveAspectRatio(none))") no-repeat;
   transform: translate(0%, -89%);
   background-size: 92% 92%;
-  opacity: 0.4;
+  opacity: 0.3;
 }

@@ -6,6 +6,13 @@ input[type=checkbox] {
   border:none;
 }
 
+input[type=radio] {
+  display:none;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  border:none;
+}
+
 input[type=checkbox] + label{
   display:inline-block;
   background: url("../img/button_1.svg") no-repeat;
@@ -27,25 +34,60 @@ input[type=checkbox]:checked + label{
   padding: 0%;
 }
 
-.muteButtonText{
+input.playCheckbox[type=checkbox] + label{
+  content: url("../img/play.svg");
+  -webkit-filter: drop-shadow(3px 3px 3px rgba(38, 39, 39, 0.5));
+  filter: drop-shadow(3px 3px 3px rgba(38, 39, 39, 0.5));
+  opacity: 0.9;
+}
+input.stopCheckbox[type=checkbox] + label{
+  content: url("../img/stop.svg");
+  -webkit-filter: drop-shadow(3px 3px 3px rgba(38, 39, 39, 0.5));
+  filter: drop-shadow(3px 3px 3px rgba(38, 39, 39, 0.5));
+  opacity: 0.9;
+}
+input.randomCheckbox[type=checkbox] + label{
+  content: url("../img/random.svg");
+  -webkit-filter: drop-shadow(3px 3px 3px rgba(38, 39, 39, 0.5));
+  filter: drop-shadow(3px 3px 3px rgba(38, 39, 39, 0.5));
+  opacity: 0.9;
+}
+input.exportCheckbox[type=checkbox] + label{
+  content: url("../img/export.svg");
+  -webkit-filter: drop-shadow(3px 3px 3px rgba(38, 39, 39, 0.5));
+  filter: drop-shadow(3px 3px 3px rgba(38, 39, 39, 0.5));
+  opacity: 0.9;
+}
+
+input.moodCheckbox[type=checkbox] + label{
   display:inline-block;
-  background: transparent;
-  font-weight: bold;
-  vertical-align: 60%;
-  color: rgba(27, 27, 26, 0.908);
-  font-size: 60%;
-  cursor: pointer;
-}
-
-.muteButton{
-  margin-top: 30%;
-  display: inline-block;
-  background: transparent;
-  height: 31%;
+  vertical-align: middle;
+  background: url("../img/button_1.svg") no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  content: url("../img/happy.svg");
+  height: 100%;
   width: 100%;
+  padding: 0%;
+  opacity: 0.9;
+  cursor: pointer;
+  -webkit-filter: drop-shadow(3px 3px 3px rgba(38, 39, 39, 0.5));
+  filter: drop-shadow(3px 3px 3px rgba(38, 39, 39, 0.5));
 }
 
-.ButtonText{
+input.moodCheckbox[type=checkbox]:checked + label{
+  display:inline-block;
+  vertical-align: middle;
+  background:url("../img/button_1_checked.svg") no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  content: url("../img/sad.svg");
+  height: 100%;
+  width: 100%;
+  padding: 0%;
+}
+
+.buttonText {
   background: transparent;
   font-weight: bold;
   vertical-align: 60%;
@@ -54,62 +96,13 @@ input[type=checkbox]:checked + label{
   cursor: pointer;
 }
 
-.Button{
-  margin-top: 0%;
-  background: transparent;
-  height: 84%;
-  width: 84%;
-}
-
-.play, .stop, .export, .previous, .next, .random, .mute {
-  display: inline-block;
-  margin-top: 2%;
-  opacity: 0.85;
-  padding: 0%;
-  margin: 0%;
-}
-
-.mute{
-  background: url("../img/mute.svg") no-repeat center center;
-  background-size: contain;
-  height: 100%;
-  width: 28%;
-}
-
-.play{
-  background: url("../img/play.svg") no-repeat center center;
-  height: 100%;
-  width: 28%;
-}
-
-.stop{
-  background: url("../img/stop.svg") no-repeat center center;
-  background-size: contain;
-  height: 100%;
-  width: 24%;
-}
-
-.export{
-  background: url("../img/export.svg") no-repeat center center;
-  background-size: contain;
-  height: 100%;
-  width: 33%;
-}
-
-.previous{
-  background: url("../img/previous.svg") no-repeat center center;
-  height: 100%;
-  width: 30%;
-}
-
-.next{
-  background: url("../img/next.svg") no-repeat center center;
-  height: 100%;
-  width: 30%;
-}
-
-.random{
-  background: url("../img/random.svg") no-repeat center center;
-  height: 100%;
-  width: 30%;
+input.muteCheckbox[type=checkbox] + label{
+  display:inline-block;
+  height: 33%;
+  width: 50%;
+  margin-top:35%;
+  content: url("../img/mute.svg");
+  -webkit-filter: drop-shadow(3px 3px 3px rgba(38, 39, 39, 0.5));
+  filter: drop-shadow(3px 3px 3px rgba(38, 39, 39, 0.5));
+  opacity: 1;
 }
