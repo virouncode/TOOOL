@@ -1,0 +1,129 @@
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TOOOL</title>
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+
+    <body>
+        <div class="logo">TØØØL</div>
+        <div class="screen" id="MASTER_SCREEN">
+            <textarea id="SCREEN_TOP" class="screenAreaMasterTop" cols="50" rows="1" readonly>WELCOME</textarea>
+            <ul class="screenAreaMaster">
+                <li id="ScreenList1"></li>
+                <li id="ScreenList2">Tool for musicians, engineers and other audio artists.</li>
+                <li id="ScreenList3"></li>
+                <li id="ScreenList4">Royalty free sounds, loops and midi.</li>
+                <li id="ScreenList5"></li>
+                <li id="ScreenList6"></li>
+                <li id="ScreenList7">Made by passion !</li>
+              </ul>
+            <textarea id="SCREEN_RIGHT" class="screenRight" cols="14" rows="8" readonly></textarea>
+            <div class="screenMasterHighlight" id="MASTER_SCREEN_HIGH_LIGHT"></div>
+        </div>
+        <div class="progression" id="progression">
+            <div class="screenProgression" id="chordScreen">
+                <div class="screenProgressionHighlight" id="SMALL_SCREEN_HIGH_LIGHT">
+                    <div class="progressionTxt" id="progressionTxt">...</div>
+                </div>
+            </div>
+            <div class="screenProgression" id="chordScreen">
+                <div class="screenProgressionHighlight" id="SMALL_SCREEN_HIGH_LIGHT"></div>
+                <div class="progressionTxt" id="progressionTxt">...</div>
+            </div>
+            <div class="screenProgression" id="chordScreen">
+                <div class="screenProgressionHighlight" id="SMALL_SCREEN_HIGH_LIGHT"></div>
+                <div class="progressionTxt" id="progressionTxt">...</div>
+            </div>
+            <div class="screenProgression" id="chordScreen">
+                <div class="screenProgressionHighlight" id="SMALL_SCREEN_HIGH_LIGHT"></div>
+                <div class="progressionTxt" id="progressionTxt">...</div>
+            </div>
+        </div>
+        <div class="buttonControl">
+            <div class="button">
+                <input type='checkbox' name='PLAY' value='valuable' id="PLAY" class="playCheckbox" checked>
+                <label for="PLAY" class="buttonText"><div class="play"></div></label>
+            </div>
+            <div class="button">
+                <input type='checkbox' name='STOP' value='valuable' id="STOP" class="stopCheckbox">
+                <label for="STOP" class="buttonText"><div class="stop"></div></label>
+            </div>
+            <input type='checkbox' name='MOOD' id="MOOD" class="moodCheckbox">
+            <label for="MOOD" class="moodLabel"></label>
+            <div class="button">
+                <input type='checkbox' name='RANDOM' value='valuable' id="RANDOM" class="randomCheckbox">
+                <label for="RANDOM" class="buttonText"><div class="random"></div></label>
+            </div>
+            <div class="Button">
+                <input type='checkbox' name='EXPORT' value='valuable' id="EXPORT" class="exportCheckbox">
+                <label for="EXPORT" class="buttonText"><div class="export"></div></label>
+            </div>
+        </div>
+        <div class="lineTextPot" id="LINE1">
+            <div class="textPot">TEMPO</div>
+            <div class="textPot">PITCH</div>
+            <div class="textPot">HARMONY</div>
+            <div class="textPot">RHYTHM</div>
+        </div>
+        <div class="linePot" id="LINE2">
+            <div class="pot"><input type="range" id="BPM" class="inputKnob" min="58" max="140" step="1" data-diameter="67" data-src="../img/pot_red.svg" value="105"></div>
+            <div class="pot"><input type="range" id="KEY" class="inputKnob" min="0" max="11" step="1" data-diameter="67" data-src="../img/pot.svg" value="0"></div>
+            <div class="pot"><input type="range" id="TYPE" class="inputKnob" min="0" max="12" step="1" data-diameter="67" data-src="../img/pot.svg" value="0"></div>
+            <div class="pot"><input type="range" id="PATTERN" class="inputKnob" min="0" max="6" step="1" data-diameter="67" data-src="../img/pot_red.svg" value="0"></div>
+        </div>
+        <div class="lineTextPot" id="LINE3">
+            <div class="textPot">SOUNDS</div>
+            <div class="textPot">REVERB</div>
+            <div class="textPot">LIFE</div>
+            <div class="textPot">SWING</div>
+        </div>
+        <div class="linePot" id="LINE4">
+            <div class="pot"><input type="range" id="SAMPLE" class="inputKnob" min="0" max="4" step="1" data-diameter="67" data-src="../img/pot_red.svg" value="0"></div>
+            <div class="pot"><input type="range" id="REVERB" class="inputKnob" min="0" max="1" step="0.01" data-diameter="67" data-src="../img/pot_red.svg" value="0.5"></div>
+            <div class="pot"><input type="range" id="LIFE" class="inputKnob" min="0" max="100" step="1" data-diameter="67" data-src="../img/pot_red.svg" value="50"></div>
+            <div class="pot"><input type="range" id="SWING" class="inputKnob" min="0" max="100" step="1" data-diameter="67" data-src="../img/pot_red.svg" value="50"></div>
+        </div>
+
+
+
+        <div class="lineChannel" id="LINE4">
+            <div class="channel" id="CHANNEL_DRUM">
+                <div class="textChannel">DRUM</div>
+                <div class="pot"><input type="range" id="SIDECHAIN" class="inputKnob" min="0" max="100" step="1" data-diameter="58" data-src="../img/pot.svg"/></div>
+                <div class="textVertical">SIDECHAIN</div>
+                <input type='checkbox' name='MUTE_DRUM' value='valuable' id="MUTE_DRUM" class="muteCheckbox">
+                <label for="MUTE_DRUM" class="muteButtonText"><div class="mute"></div></label>
+            </div>
+            <div class="space_channel"></div>
+            <div class="channel" id="CHANNEL_DRUM">
+                <div class="textChannel">BASS</div>
+                <div class="pot"><input type="range" id="ACCENT" class="inputKnob" min="0" max="100" step="1" data-diameter="58" data-src="../img/pot.svg"></div>
+                <div class="textVertical">ACCENT</div>
+                <input type='checkbox' name='MUTE_BASS' value='valuable' id="MUTE_BASS" class="muteCheckbox">
+                <label for="MUTE_BASS" class="muteButtonText"><div class="mute"></div></label>
+            </div>
+            <div class="space_channel"></div>
+            <div class="channel" id="CHANNEL_CHORD">
+                <div class="textChannel">CHORD</div>
+                <div class="pot"><input type="range" id="ARP" class="inputKnob" min="0" max="100" step="1" data-diameter="58" data-src="../img/pot.svg"></div>
+                <div class="textVertical">ENHANCE</div>
+                <input type='checkbox' name='MUTE_CHORD' value='valuable' id="MUTE_CHORD" class="muteCheckbox">
+                <label for="MUTE_CHORD" class="muteButtonText"><div class="mute"></div></label>
+            </div>
+            <div class="space_channel"></div>
+            <div class="channel" id="CHANNEL_CHORD">
+                <div class="textChannel">ARP</div>
+                <div class="pot"><input type="range" id="ARP" class="inputKnob" min="0" max="100" step="1" data-diameter="58" data-src="../img/pot.svg"></div>
+                <div class="textVertical">SELECT</div>
+                <input type='checkbox' name='MUTE_ARP' value='valuable' id="MUTE_ARP" class="muteCheckbox">
+                <label for="MUTE_ARP" class="muteButtonText"><div class="mute"></div></label>
+            </div>
+        </div>
+        <!-- <script src="node_modules/tone/build/Tone.js" type="text/javascript"></script>   -->
+        <script src="../node_modules/tone/build/Tone.js"></script>
+        <script src="../src/index.js" type="module"></script>  
+    </body>
+</html>
