@@ -2,7 +2,6 @@ import {defaultScreen, addScreenControl,addScreenMute,addScreen,loadSamplesOnCha
 import {refreshEvents, refreshPattern} from './events.js';
 import {parametersValues,setParameterValue} from './parameters.js'
 import {addChordGrid, writeScreenRight} from './screen-functions.js';
-import {playStatus} from './player.js';
 
 //Recupération des potards//
 let bpmBtn = document.querySelector("#BPM"); 
