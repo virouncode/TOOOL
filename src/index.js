@@ -103,10 +103,27 @@ window.addEventListener("load", () => {
       }
       let ik=el.inputKnobs={};
       el.refresh=()=>{
-        d=+el.getAttribute("data-diameter");
-        let st=document.defaultView.getComputedStyle(el,null);
-        w=parseFloat(el.getAttribute("data-width")||d||st.width);
-        h=parseFloat(el.getAttribute("data-height")||d||st.height);
+        var potClass=el.getAttribute("pot-class");
+        //let st=document.defaultView.getComputedStyle(el);
+        //w=parseFloat(el.getAttribute("data-width")||d||st.width);
+        //h=parseFloat(el.getAttribute("data-height")||d||st.height);
+        
+
+
+        if (potClass == "pot1"){
+          var divDim = document.getElementById("pot1");
+          console.log(divDim.clientWidth);
+        }
+          else{
+          var divDim = document.getElementById("potChannel"); 
+          console.log(divDim.clientWidth);
+        }
+
+        //w = divDim.clientWidth;
+        //h = divDim.clientHeight;
+w=20;
+h=20;
+
         bg=el.getAttribute("data-bgcolor")||op.bgcolor;
         fg=el.getAttribute("data-fgcolor")||op.fgcolor;
         ik.sensex=ik.sensey=200;
