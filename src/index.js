@@ -62,7 +62,10 @@ window.addEventListener("load", () => {
     op.knobMode=op.knobMode||"linear";
     let styles=document.createElement("style");
     styles.innerHTML=
-  `input[type=range].inputKnob{
+  `input[type=range] {
+    display: inline-block;
+  }
+  input[type=range].inputKnob{
     -webkit-appearance:none;
     -moz-appearance:none;
     border:none;
@@ -103,26 +106,11 @@ window.addEventListener("load", () => {
       }
       let ik=el.inputKnobs={};
       el.refresh=()=>{
-        var potClass=el.getAttribute("pot-class");
-        //let st=document.defaultView.getComputedStyle(el);
-        //w=parseFloat(el.getAttribute("data-width")||d||st.width);
-        //h=parseFloat(el.getAttribute("data-height")||d||st.height);
-        
-
-
-        if (potClass == "pot1"){
-          var divDim = document.getElementById("pot1");
-          console.log(divDim.clientWidth);
-        }
-          else{
-          var divDim = document.getElementById("potChannel"); 
-          console.log(divDim.clientWidth);
-        }
-
-        //w = divDim.clientWidth;
-        //h = divDim.clientHeight;
-w=20;
-h=20;
+        // Il faut donner au button type range un attribut pot-id égale à l'ID du div parent
+        var potId=el.getAttribute("pot-id");
+        var divDim = document.getElementById(potId);
+        w = divDim.clientWidth;
+        h = divDim.clientHeight;
 
         bg=el.getAttribute("data-bgcolor")||op.bgcolor;
         fg=el.getAttribute("data-fgcolor")||op.fgcolor;

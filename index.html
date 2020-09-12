@@ -70,10 +70,10 @@
             <div class="textPot">RHYTHM</div>
         </div>
         <div class="linePot" id="LINE2">
-            <div class="pot1" id="pot1"><input type="range" id="BPM" class="inputKnob" min="58" max="140" step="1" pot-class="pot1" data-src="./img/pot_red.svg" value="105"></div>
-            <div class="pot1"><input type="range" id="KEY" class="inputKnob" min="0" max="11" step="1" pot-class="pot1" data-src="./img/pot.svg" value="0"></div>
-            <div class="pot1"><input type="range" id="TYPE" class="inputKnob" min="0" max="12" step="1" pot-class="pot1" data-src="./img/pot.svg" value="0"></div>
-            <div class="pot1"><input type="range" id="PATTERN" class="inputKnob" min="0" max="6" step="1" pot-class="pot1" data-src="./img/pot_red.svg" value="0"></div>
+            <div class="pot" id="pot1"><input type="range" id="BPM" class="inputKnob" min="58" max="140" step="1" pot-id="pot1" data-src="./img/pot_red.svg" value="105"></div>
+            <div class="pot" id="pot1"><input type="range" id="KEY" class="inputKnob" min="0" max="11" step="1" pot-id="pot1" data-src="./img/pot.svg" value="0"></div>
+            <div class="pot" id="pot1"><input type="range" id="TYPE" class="inputKnob" min="0" max="12" step="1" pot-id="pot1" data-src="./img/pot.svg" value="0"></div>
+            <div class="pot" id="pot1"><input type="range" id="PATTERN" class="inputKnob" min="0" max="6" step="1" pot-id="pot1" data-src="./img/pot_red.svg" value="0"></div>
         </div>
         <div class="lineTextPot" id="LINE3">
             <div class="textPot">SOUNDS</div>
@@ -82,10 +82,10 @@
             <div class="textPot">SWING</div>
         </div>
         <div class="linePot" id="LINE4">
-            <div class="pot1"><input type="range" id="SAMPLE" class="inputKnob" min="0" max="4" step="1" pot-class="pot1" data-src="./img/pot_red.svg" value="0"></div>
-            <div class="pot1"><input type="range" id="REVERB" class="inputKnob" min="0" max="1" step="0.01" pot-class="pot1" data-src="./img/pot_red.svg" value="0.5"></div>
-            <div class="pot1"><input type="range" id="LIFE" class="inputKnob" min="0" max="100" step="1" pot-class="pot1" data-src="./img/pot_red.svg" value="50"></div>
-            <div class="pot1"><input type="range" id="SWING" class="inputKnob" min="0" max="100" step="1" pot-class="pot1" data-src="./img/pot_red.svg" value="50"></div>
+            <div class="pot" id="pot1"><input type="range" id="SAMPLE" class="inputKnob" min="0" max="4" step="1" pot-id="pot1" data-src="./img/pot_red.svg" value="0"></div>
+            <div class="pot" id="pot1"><input type="range" id="REVERB" class="inputKnob" min="0" max="1" step="0.01" pot-id="pot1" data-src="./img/pot_red.svg" value="0.5"></div>
+            <div class="pot" id="pot1"><input type="range" id="LIFE" class="inputKnob" min="0" max="100" step="1" pot-id="pot1" data-src="./img/pot_red.svg" value="50"></div>
+            <div class="pot" id="pot1"><input type="range" id="SWING" class="inputKnob" min="0" max="100" step="1" pot-id="pot1" data-src="./img/pot_red.svg" value="50"></div>
         </div>
 
 
@@ -94,28 +94,28 @@
             <div class="channel" id="CHANNEL_DRUM">
                 <div class="textChannel">DRUM</div>
                 <div class="potTextChannel">SIDECHAIN</div>
-                <div class="potChannel"><input type="range" id="SIDECHAIN" class="inputKnob" min="0" max="100" step="1" pot-class="potChannel" data-src="./img/pot.svg"/></div>
+                <div class="potChannel" id="pot2"><input type="range" id="SIDECHAIN" class="inputKnob" min="0" max="100" step="1" pot-id="pot2" data-src="./img/pot.svg"/></div>
                 <input type='checkbox' name='MUTE_DRUM' value='valuable' id="MUTE_DRUM" class="muteCheckbox">
                 <label for="MUTE_DRUM" class="muteButtonText"><div class="mute"></div></label>
             </div>
             <div class="channel" id="CHANNEL_DRUM">
                 <div class="textChannel">BASS</div>
                 <div class="potTextChannel">ACCENT</div>
-                <div class="potChannel"><input type="range" id="ACCENT" class="inputKnob" min="0" max="100" step="1" pot-class="potChannel" data-src="./img/pot.svg"></div>
+                <div class="potChannel" id="pot2"><input type="range" id="ACCENT" class="inputKnob" min="0" max="100" step="1" pot-id="pot2" data-src="./img/pot.svg"></div>
                 <input type='checkbox' name='MUTE_BASS' value='valuable' id="MUTE_BASS" class="muteCheckbox">
                 <label for="MUTE_BASS" class="muteButtonText"><div class="mute"></div></label>
             </div>
             <div class="channel" id="CHANNEL_CHORD">
                 <div class="textChannel">CHORD</div>
                 <div class="potTextChannel">ENHANCE</div>
-                <div class="potChannel"><input type="range" id="ARP" class="inputKnob" min="0" max="100" step="1" pot-class="potChannel" data-src="./img/pot.svg"></div>
+                <div class="potChannel" id="pot2"><input type="range" id="ARP" class="inputKnob" min="0" max="100" step="1" pot-id="pot2" data-src="./img/pot.svg"></div>
                 <input type='checkbox' name='MUTE_CHORD' value='valuable' id="MUTE_CHORD" class="muteCheckbox">
                 <label for="MUTE_CHORD" class="muteButtonText"><div class="mute"></div></label>
             </div>
             <div class="channel" id="CHANNEL_CHORD">
                 <div class="textChannel">ARP</div>
                 <div class="potTextChannel">SELECT</div>
-                <div class="potChannel"><input type="range" id="ARP" class="inputKnob" min="0" max="100" step="1" pot-class="potChannel" data-src="./img/pot.svg"></div>
+                <div class="potChannel" id="pot2"><input type="range" id="ARP" class="inputKnob" min="0" max="100" step="1" pot-id="pot2" data-src="./img/pot.svg"></div>
                 <input type='checkbox' name='MUTE_ARP' value='valuable' id="MUTE_ARP" class="muteCheckbox">
                 <label for="MUTE_ARP" class="muteButtonText"><div class="mute"></div></label>
             </div>
