@@ -4,7 +4,7 @@ import {chord, bass, kick, snare, hh} from './console.js';
 function loadSamples(){
     // Repertory Samples Select
     const SamplesBtn = samplesList[parametersValues[4]];
-    const RepertorySamples = "../samples/" + SamplesBtn + "/";
+    const RepertorySamples = "./../samples/" + SamplesBtn + "/";
     
     var audioSamples = [
         RepertorySamples + "Chord-C2.ogg",
